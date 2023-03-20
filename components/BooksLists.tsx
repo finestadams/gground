@@ -35,7 +35,7 @@ export const BooksLists = () => {
     getAllBooks();
   }, []);
   console.log(data, "data");
-  const getBooks = data?.books.map((book: any) => (
+  const getBooks = data?.books?.map((book: any) => (
     <>
       <ListItem key={book.id} alignItems="center">
         <ListItemAvatar>
