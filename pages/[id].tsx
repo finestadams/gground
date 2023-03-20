@@ -26,8 +26,10 @@ const DetailPage = ({ params }: any) => {
   return (
     <>
       {singleData.map((items: any) => (
-        <div key={items.id}>
-          <Card sx={{ maxWidth: 345 }}>
+        <div key={items.id} style={{ paddingLeft: "3%" }}>
+          <Card
+            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+          >
             <CardMedia
               sx={{ height: 140 }}
               image="/book-img.jpg"
