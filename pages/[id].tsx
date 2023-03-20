@@ -1,5 +1,12 @@
 import MainLayout from "@/layouts/MainLayout";
 import React from "react";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import CardMedia from "@mui/material/CardMedia";
 import { useAppSelector } from "@/app/hooks";
 export async function getServerSideProps(context: any) {
   return {
@@ -19,7 +26,29 @@ const DetailPage = ({ params }: any) => {
   return (
     <>
       {singleData.map((items: any) => (
-        <div key={items.id}>{items.id}</div>
+        <div key={items.id}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+              sx={{ height: 140 }}
+              image="/book-img.jpg"
+              title="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Author name: {items.book_author[0]}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Book title: {items.book_title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                City: {items.book_publication_city}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Country: {items.book_publication_country}
+              </Typography>
+            </CardContent>
+          </Card>
+        </div>
       ))}
     </>
   );
