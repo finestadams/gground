@@ -13,6 +13,7 @@ import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Skeleton from "@mui/material/Skeleton";
+import Link from "next/link";
 
 export const BooksLists = () => {
   //   const [books, setBooks] = useState(null);
@@ -55,7 +56,7 @@ export const BooksLists = () => {
           }
         />
         <CardActions>
-          <Button size="small">More</Button>
+          <Link href={`/${book.id}`}>More</Link>
         </CardActions>
       </ListItem>
       <Divider variant="inset" component="li" />
